@@ -21,10 +21,15 @@ Scenario Outline: get repos where user is collaborator
   | apuyinc   | testOhpen  |
 
 Scenario: Create a new repo with existing name
+  Given path reposUrl, 'apitest-hub', 'Hello-World'
+  And header Authorization = 'Bearer ' + securityToken
+  When method delete
+
   Given path userUrl, reposUrl
   And header Authorization = 'Bearer ' + securityToken
-  And request { name: 'Hello-World' }
+  And request read('repos.json')
   When method post
+  And match response contains read('expected_repos.json')
 
   Given path userUrl, reposUrl
   And header Authorization = 'Bearer ' + securityToken
