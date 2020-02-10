@@ -2,7 +2,7 @@
 
 Testing the GitHub API using Karate framework
 
-Task accomplished:
+Tasks accomplished:
 
 * Endpoints GET, POST, DELETE
 * External data sources for input and validation
