@@ -5,14 +5,22 @@ function fn() {
     env = 'dev';
   }
   var config = {
-    env: env,
-	myVarName: 'someValue'
-  }
+    baseUrl : 'https://api.github.com/',
+    usersUrl : 'users',
+    userUrl : 'user', 
+    reposUrl : 'repos', 
+    signupCheckUrl : 'signup_check',
+    clientId : '3c7b949c34d9e927992b',
+    clientSecret : '87fb9dd597dfbd2416aa57e73f9f4d61090084a6',
+    securityToken : '59f8ed30d3d422b2133caee268401795622c525b'
+  };
+  
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+    baseUrl = 'https://api.github.com/'
+  } else if (env == 'qa') {
+    baseUrl = 'https://github.com/'
   }
+  karate.configure('connectTimeout', 5000);
+  karate.configure('readTimeout', 5000);
   return config;
 }
