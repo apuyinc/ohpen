@@ -12,7 +12,7 @@ function fn() {
     signupCheckUrl : 'signup_check',
     clientId : '3c7b949c34d9e927992b',
     clientSecret : '87fb9dd597dfbd2416aa57e73f9f4d61090084a6',
-    securityToken : 'f4955b23ad877bd7d266601b295909910db7a1f8'
+    securityToken : 'ff0a420d6c188a78051d13dcdec98e2ac61d5b4e'
   };
   
   if (env == 'dev') {
